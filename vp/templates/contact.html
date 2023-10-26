@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+{% include 'nav.html' %}
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    input[type=text],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+
+    input[type=submit] {
+      background-color: #04AA6D;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+
+    .container {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+  </style>
+  <style media="screen">
+    body {
+      background-image: linear-gradient(to right, dodgerblue, darkblue);
+    }
+  </style>
+</head>
+
+<body>
+
+  <h3>Contact Form</h3>
+
+  <div class="container">
+    <form action="/send" method="post">
+      {% csrf_token %}
+      <!-- <label for="id">ID</label>
+    <input type="text" id="id" name="id" placeholder="Your ID.."> -->
+
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" name="fname" placeholder="Your name..">
+
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" name="lname" placeholder="Your last name..">
+
+      <label for="country">Country</label>
+      <select id="country" name="country">
+        <option value="australia">Australia</option>
+        <option value="canada">Canada</option>
+        <option value="usa">USA</option>
+      </select>
+
+      <label for="subject">Subject</label>
+      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+      <h1>{{msg}}</h1>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <center>
+    <h1 style="color:lawngreen;">
+      Aurangabad India </h1>
+    <div>
+      <!-- Google Map Copied Code -->
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d240145.99860699894!2d75.14038612990984!3d19.870343398088355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdb9815a369bc63%3A0x712d538b29a2a73e!2sAurangabad%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1698230491167!5m2!1sen!2sin"
+        width="400" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </center>
+
+</body>
+
+</html>
